@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Link,
-  Switch,
-  Redirect,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignupPage from "./components/pages/SignupPage";
 import PasswordReset from "./components/pages/PasswordReset";
 import pinReset from "./components/pages/pinReset";
@@ -17,7 +10,6 @@ import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import Alert from "./components/Alert";
 import PrivateRoute from "./components/common/PrivateRoute";
-import history from "./history";
 import { getUser } from "./actions/auth";
 import store from "./store";
 import EmailChange from "./components/pages/EmailChange";

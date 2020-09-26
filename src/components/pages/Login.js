@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { login } from "../../actions/auth";
 import { connect } from "react-redux";
-import { withStyles } from "@material-ui/core/styles";
 import {
   Box,
   Card,
@@ -11,77 +10,9 @@ import {
   TextField,
   Button,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
 import Logo from "../Logo";
 import { Link as RouterLink, Redirect } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.background.dark,
-    display: "flex",
-    flexDirection: "column",
-    minHeight: "100vh",
-  },
-  banner: {
-    backgroundColor: theme.palette.background.paper,
-    paddingBottom: theme.spacing(2),
-    paddingTop: theme.spacing(2),
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  bannerChip: {
-    marginRight: theme.spacing(2),
-  },
-  methodIcon: {
-    height: 30,
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-  },
-  cardContainer: {
-    paddingBottom: 80,
-    paddingTop: 80,
-  },
-  cardContent: {
-    padding: theme.spacing(4),
-    display: "flex",
-    flexDirection: "column",
-    minHeight: 400,
-  },
-  currentMethodIcon: {
-    height: 40,
-    "& > img": {
-      width: "auto",
-      maxHeight: "100%",
-    },
-  },
-  googleButton: {
-    backgroundColor: theme.palette.common.white,
-  },
-  providerIcon: {
-    marginRight: theme.spacing(2),
-  },
-  divider: {
-    flexGrow: 1,
-  },
-  dividerText: {
-    margin: theme.spacing(2),
-  },
-  loginHeader: {
-    color: "#263238",
-    fontWeight: "500",
-    lineHeight: "1.2",
-    letterSpacing: "-0.24px",
-  },
-  cursor: {
-    cursor: "pointer",
-    color: "#546e7a",
-    textDecoration: "none",
-    marginRight: "20px",
-  },
-  btnColor: {
-    backgroundColor: "#5850EC",
-  },
-}));
 
 export class Login extends Component {
   state = {

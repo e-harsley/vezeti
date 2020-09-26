@@ -2,15 +2,12 @@ import axios from "axios";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
-  USER_LOADING,
   USER_LOADED,
   LOGIN_SUCCESS,
   LOGOUT,
-  GET_SUCCESS,
   LOGIN_FAIL,
 } from "./types";
 import { returnErrors, returnSuccess } from "./messages";
-import history from "../history";
 
 export const getUser = () => (dispatch, getState) => {
   const userId = getState().auth.userId;
@@ -124,9 +121,9 @@ export const changeEmail = ({ orgId, currentEmail, newEmail }) => (
       config
     )
     .then((res) => {
-      if (res.data["responseCode"] == "00") {
+      if (res.data["responseCode"] === "00") {
         dispatch(returnSuccess(res.data["responseMessage"]));
-      } else if (res.data["responseCode"] == "01") {
+      } else if (res.data["responseCode"] === "01") {
         dispatch(returnErrors(res.data["responseMessage"]));
       }
     });
@@ -160,12 +157,12 @@ export const register = ({
   axios
     .post("https://secure.vezeti.net/test-api/v3/signup/", body, config)
     .then((res) => {
-      if (res.data["responseCode"] == "00") {
+      if (res.data["responseCode"] === "00") {
         dispatch({
           type: REGISTER_SUCCESS,
           payload: res.data["responseData"],
         });
-      } else if (res.data["responseCode"] == "01") {
+      } else if (res.data["responseCode"] === "01") {
         dispatch({
           type: REGISTER_FAIL,
         });
@@ -191,9 +188,9 @@ export const passwordReset = ({ orgId, email }) => (dispatch) => {
   axios
     .post("https://secure.vezeti.net/test-api/v3/forgotpassword/", body, config)
     .then((res) => {
-      if (res.data["responseCode"] == "00") {
+      if (res.data["responseCode"] === "00") {
         dispatch(returnSuccess(res.data["responseMessage"]));
-      } else if (res.data["responseCode"] == "01") {
+      } else if (res.data["responseCode"] === "01") {
         dispatch(returnErrors(res.data["responseMessage"]));
       }
     });
@@ -216,9 +213,9 @@ export const pinReset = ({ orgId, mobile }) => (dispatch) => {
   axios
     .post("https://secure.vezeti.net/test-api/v3/forgotpin/", body, config)
     .then((res) => {
-      if (res.data["responseCode"] == "00") {
+      if (res.data["responseCode"] === "00") {
         dispatch(returnSuccess(res.data["responseMessage"]));
-      } else if (res.data["responseCode"] == "01") {
+      } else if (res.data["responseCode"] === "01") {
         dispatch(returnErrors(res.data["responseMessage"]));
       }
     });

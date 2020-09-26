@@ -1,47 +1,25 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect } from "react";
 import { useLocation, matchPath } from "react-router-dom";
-import { Link as RouterLink } from "react-router-dom";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { connect } from "react-redux";
 import { getUser } from "../../../actions/auth";
 import PropTypes from "prop-types";
 import {
-  Avatar,
   Box,
-  Chip,
   Divider,
   Drawer,
   Hidden,
-  Link,
   List,
   ListSubheader,
   Typography,
   makeStyles,
 } from "@material-ui/core";
-import ReceiptIcon from "@material-ui/icons/ReceiptOutlined";
 import {
-  Briefcase as BriefcaseIcon,
-  Calendar as CalendarIcon,
-  ShoppingCart as ShoppingCartIcon,
-  Folder as FolderIcon,
   BarChart as BarChartIcon,
-  Lock as LockIcon,
-  UserPlus as UserPlusIcon,
-  AlertCircle as AlertCircleIcon,
-  Trello as TrelloIcon,
-  User as UserIcon,
-  Layout as LayoutIcon,
-  Edit as EditIcon,
-  DollarSign as DollarSignIcon,
-  Mail as MailIcon,
-  MessageCircle as MessageCircleIcon,
   PieChart as PieChartIcon,
-  Share2 as ShareIcon,
-  Users as UsersIcon,
 } from "react-feather";
 import NavItem from "./NavItem";
-import Logo from "../../Logo";
 import Photo from "../../Photo";
 
 const sections = [

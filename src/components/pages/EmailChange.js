@@ -4,13 +4,6 @@ import NavBar from "../ui/NavBar";
 import { connect } from "react-redux";
 import { getUser, changeEmail } from "../../actions/auth";
 import {
-  BrowserRouter as Router,
-  Link,
-  Switch,
-  Redirect,
-  Route,
-} from "react-router-dom";
-import {
   Box,
   Card,
   CardContent,
@@ -19,10 +12,7 @@ import {
   TextField,
   Button,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 export class EmailChange extends Component {
   state = {
     orgId: "728934",
